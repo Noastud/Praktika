@@ -1,0 +1,41 @@
+.company.Neutral {
+    /* No additional styling needed for Neutral */
+}
+
+.company.Zusage {
+    background-color: #ccffcc; /* Light green for Zusage */
+}
+
+.company.Offen {
+    background-color: #ffffcc; /* Light yellow for Offen */
+}
+
+.company.Bewerbungsgespräch {
+    background-color: #ccccff; /* Light blue for Bewerbungsgespräch */
+}
+
+#companiesContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.companyHeader, .company {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.companyHeader {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.company {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.company.Absage {
+    background-color: #ffcccc; /* Light red for Absage */
+}
+

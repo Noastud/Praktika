@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add New Company</title>
+    <title>Praktika</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Add New Company</h1>
+    <h1>Praktika</h1>
     <form id="addCompanyForm">
         <input type="text" id="companyName" name="companyName" placeholder="Company Name" required>
         <select id="companyCategory" name="companyCategory" required>
@@ -29,47 +30,5 @@
         </div>
     </div>
     <script src="addCompany.js"></script>
-    <style>
-        #companiesContainer {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .companyHeader, .company {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        
-        .companyHeader {
-            background-color: #f0f0f0;
-            font-weight: bold;
-        }
-        
-        .company {
-            border-left: 1px solid #ccc;
-            border-right: 1px solid #ccc;
-        }
-        .company.Absage {
-            background-color: #ffcccc; /* Light red for Absage */
-        }
-
-        .company.Neutral {
-            /* No additional styling needed for Neutral */
-        }
-
-        .company.Zusage {
-            background-color: #ccffcc; /* Light green for Zusage */
-        }
-
-        .company.Offen {
-            background-color: #ffffcc; /* Light yellow for Offen */
-        }
-
-        .company.Bewerbungsgespräch {
-            background-color: #ccccff; /* Light blue for Bewerbungsgespräch */
-        }
-    </style>
 </body>
 </html>
