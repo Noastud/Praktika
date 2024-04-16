@@ -73,6 +73,17 @@ const updateCompanyStatus = (companyName, newStatus) => {
         console.log('Company not found.');
     }
 };
+const sortCompanies = (companies, sortBy) => {
+    if (sortBy === 'status') {
+        return companies.sort((a, b) => statusOrder.indexOf(a.category) - statusOrder.indexOf(b.category));
+    } else if (sortBy === 'alphabetical') {
+        return companies.sort((a, b) => a.name.localeCompare(b.name));
+    } else {
+        console.log('Invalid sort option.');
+        return companies;
+    }
+};
+
 
 const getCompanies = () => {
     return loadCompanies(); // Using the loadCompanies function you already have

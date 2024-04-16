@@ -5,6 +5,89 @@ document.getElementById('addCompanyForm').addEventListener('submit', function(e)
         companyName: document.getElementById('companyName').value,
         companyCategory: document.getElementById('companyCategory').value,
     };
+document.getElementById('sortSelect').addEventListener('change', function() {
+    const sortBy = this.value;
+    const sortedCompanies = sortCompanies(companies, sortBy);
+    displayCompanies(sortedCompanies);
+    });
+    
+    function fetchAndDisplayCompanies() {
+        console.log("Fetching and displaying companies...");
+        fetch('/api/companies')
+            .then(response => response.json())
+            .then(data => {
+                // Sort companies by status
+                data.sort((a, b) => statusOrder.indexOf(a.category) - statusOrder.indexOf(b.category));
+
+                // Filter companies based on search query
+                const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+                const matchingCompanies = data.filter(company => company.name.toLowerCase().includes(searchQuery));
+
+                // Separate matching and non-matching companies
+                const nonMatchingCompanies = data.filter(company => !company.name.toLowerCase().includes(searchQuery));
+
+                // Combine matching and non-matching companies with matching ones at the top
+                const combinedCompanies = matchingCompanies.concat(nonMatchingCompanies);
+
+                const grid = document.getElementById('companiesGrid');
+                grid.innerHTML = ''; // Clear the grid before displaying the sorted companies
+
+                const statusCounts = calculateStatusCounts(combinedCompanies);
+                displayStatusCounts(statusCounts);
+
+                combinedCompanies.forEach(company => {
+                    const companyDiv = document.createElement('div');
+                    companyDiv.className = `company ${company.category}`;
+
+                    const nameDiv = document.createElement('div');
+                    nameDiv.textContent = company.name;
+
+                    const companyContentDiv = document.createElement('div');
+                    companyContentDiv.classList.add('company-content');
+
+                    const statusSelect = document.createElement('select');
+                    statusSelect.classList.add('status-select'); // Add a class for styling
+                    statusSelect.addEventListener('change', function() {
+                        // Update the company status when the dropdown value changes
+                        const newStatus = this.value;
+                        company.category = newStatus; // Update the category in the data array
+                        const statusCounts = calculateStatusCounts(combinedCompanies);
+                        displayStatusCounts(statusCounts);
+                    });
+                
+                    // Populate dropdown options based on the statusOrder array
+                    statusOrder.forEach(status => {
+                        const option = document.createElement('option');
+                        option.value = status;
+                        option.textContent = status;
+                        statusSelect.appendChild(option);
+                    });
+                
+                    // Set the selected option to the current company status
+                    statusSelect.value = company.category;
+
+                    // Create delete button
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.classList.add('delete-button');
+                    deleteButton.addEventListener('click', function() {
+                        deleteCompany(company.name);
+                        const statusCounts = calculateStatusCounts(combinedCompanies);
+                        displayStatusCounts(statusCounts);
+                    });
+                
+                    companyContentDiv.appendChild(statusSelect);
+                    companyContentDiv.appendChild(deleteButton);
+
+                    companyDiv.appendChild(nameDiv);
+                    companyDiv.appendChild(companyContentDiv); // Append the company content div
+                
+                    grid.appendChild(companyDiv);
+                });
+            }).catch(error => console.error('Error fetching companies:', error));
+    }
+    
+    
 
     fetch('/api/companies', {
         method: 'POST',
@@ -35,22 +118,40 @@ function fetchAndDisplayCompanies() {
             // Sort companies by status
             data.sort((a, b) => statusOrder.indexOf(a.category) - statusOrder.indexOf(b.category));
 
+            // Filter companies based on search query
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const matchingCompanies = data.filter(company => company.name.toLowerCase().includes(searchQuery));
+
+            // Separate matching and non-matching companies
+            const nonMatchingCompanies = data.filter(company => !company.name.toLowerCase().includes(searchQuery));
+
+            // Combine matching and non-matching companies with matching ones at the top
+            const combinedCompanies = matchingCompanies.concat(nonMatchingCompanies);
+
             const grid = document.getElementById('companiesGrid');
             grid.innerHTML = ''; // Clear the grid before displaying the sorted companies
 
-            data.forEach(company => {
+            const statusCounts = calculateStatusCounts(combinedCompanies);
+            displayStatusCounts(statusCounts);
+
+            combinedCompanies.forEach(company => {
                 const companyDiv = document.createElement('div');
                 companyDiv.className = `company ${company.category}`;
-                
+
                 const nameDiv = document.createElement('div');
                 nameDiv.textContent = company.name;
-                
+
+                const companyContentDiv = document.createElement('div');
+                companyContentDiv.classList.add('company-content');
+
                 const statusSelect = document.createElement('select');
                 statusSelect.classList.add('status-select'); // Add a class for styling
                 statusSelect.addEventListener('change', function() {
                     // Update the company status when the dropdown value changes
                     const newStatus = this.value;
                     company.category = newStatus; // Update the category in the data array
+                    const statusCounts = calculateStatusCounts(combinedCompanies);
+                    displayStatusCounts(statusCounts);
                 });
             
                 // Populate dropdown options based on the statusOrder array
@@ -63,13 +164,64 @@ function fetchAndDisplayCompanies() {
             
                 // Set the selected option to the current company status
                 statusSelect.value = company.category;
+
+                // Create delete button
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.classList.add('delete-button');
+                deleteButton.addEventListener('click', function() {
+                    deleteCompany(company.name);
+                    const statusCounts = calculateStatusCounts(combinedCompanies);
+                    displayStatusCounts(statusCounts);
+                });
             
+                companyContentDiv.appendChild(statusSelect);
+                companyContentDiv.appendChild(deleteButton);
+
                 companyDiv.appendChild(nameDiv);
-                companyDiv.appendChild(statusSelect);
+                companyDiv.appendChild(companyContentDiv); // Append the company content div
             
                 grid.appendChild(companyDiv);
             });
         }).catch(error => console.error('Error fetching companies:', error));
+}
+
+function calculateStatusCounts(companies) {
+    const statusCounts = {};
+    statusOrder.forEach(status => {
+        statusCounts[status] = companies.filter(company => company.category === status).length;
+    });
+    return statusCounts;
+}
+
+function displayStatusCounts(statusCounts) {
+    const countsContainer = document.getElementById('statusCounts');
+    countsContainer.innerHTML = ''; // Clear previous counts
+
+    Object.entries(statusCounts).forEach(([status, count]) => {
+        const countDiv = document.createElement('div');
+        countDiv.textContent = `${status}: ${count}`;
+        countsContainer.appendChild(countDiv);
+    });
+}
+
+
+function deleteCompany(companyName) {
+    // Call your backend API to delete the company
+    fetch(`/api/companies/${companyName}`, {
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Company deleted successfully');
+            fetchAndDisplayCompanies(); // Refresh the companies list after deletion
+        } else {
+            console.error('Failed to delete company');
+        }
+    })
+    .catch(error => {
+        console.error('Error deleting company:', error);
+    });
 }
 
 function saveChanges() {
@@ -105,6 +257,7 @@ function saveCompanyChanges(companyName, newStatus) {
         console.error('Error saving changes:', error);
     });
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchAndDisplayCompanies();

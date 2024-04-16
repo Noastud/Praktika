@@ -39,3 +39,22 @@
     background-color: #ffcccc; /* Light red for Absage */
 }
 
+.company {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.company-content {
+    display: flex;
+    align-items: center;
+}
+
+.status-select {
+    margin-left: auto;
+}
+
+.delete-button {
+    margin-left: 10px;
+}
