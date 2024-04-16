@@ -115,26 +115,23 @@ function fetchAndDisplayCompanies() {
     fetch('/api/companies')
         .then(response => response.json())
         .then(data => {
-            // Sort companies by status
-            data.sort((a, b) => statusOrder.indexOf(a.category) - statusOrder.indexOf(b.category));
+            // Get search input and convert it to lowercase
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
 
-            // Filter companies based on search query
-            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
-            const matchingCompanies = data.filter(company => company.name.toLowerCase().includes(searchQuery));
+            // Filter companies based on search input (case-insensitive)
+            const filteredCompanies = data.filter(company => company.name.toLowerCase().includes(searchInput));
 
-            // Separate matching and non-matching companies
-            const nonMatchingCompanies = data.filter(company => !company.name.toLowerCase().includes(searchQuery));
-
-            // Combine matching and non-matching companies with matching ones at the top
-            const combinedCompanies = matchingCompanies.concat(nonMatchingCompanies);
+            // Sort filtered companies by status
+            filteredCompanies.sort((a, b) => statusOrder.indexOf(a.category) - statusOrder.indexOf(b.category));
 
             const grid = document.getElementById('companiesGrid');
             grid.innerHTML = ''; // Clear the grid before displaying the sorted companies
 
-            const statusCounts = calculateStatusCounts(combinedCompanies);
+            const statusCounts = calculateStatusCounts(filteredCompanies);
             displayStatusCounts(statusCounts);
 
-            combinedCompanies.forEach(company => {
+            // Display filtered and sorted companies
+            filteredCompanies.forEach(company => {
                 const companyDiv = document.createElement('div');
                 companyDiv.className = `company ${company.category}`;
 
@@ -150,10 +147,10 @@ function fetchAndDisplayCompanies() {
                     // Update the company status when the dropdown value changes
                     const newStatus = this.value;
                     company.category = newStatus; // Update the category in the data array
-                    const statusCounts = calculateStatusCounts(combinedCompanies);
+                    const statusCounts = calculateStatusCounts(filteredCompanies);
                     displayStatusCounts(statusCounts);
                 });
-            
+
                 // Populate dropdown options based on the statusOrder array
                 statusOrder.forEach(status => {
                     const option = document.createElement('option');
@@ -161,7 +158,7 @@ function fetchAndDisplayCompanies() {
                     option.textContent = status;
                     statusSelect.appendChild(option);
                 });
-            
+
                 // Set the selected option to the current company status
                 statusSelect.value = company.category;
 
@@ -171,20 +168,22 @@ function fetchAndDisplayCompanies() {
                 deleteButton.classList.add('delete-button');
                 deleteButton.addEventListener('click', function() {
                     deleteCompany(company.name);
-                    const statusCounts = calculateStatusCounts(combinedCompanies);
+                    const statusCounts = calculateStatusCounts(filteredCompanies);
                     displayStatusCounts(statusCounts);
                 });
-            
+
                 companyContentDiv.appendChild(statusSelect);
                 companyContentDiv.appendChild(deleteButton);
 
                 companyDiv.appendChild(nameDiv);
                 companyDiv.appendChild(companyContentDiv); // Append the company content div
-            
+
                 grid.appendChild(companyDiv);
             });
         }).catch(error => console.error('Error fetching companies:', error));
 }
+
+
 
 function calculateStatusCounts(companies) {
     const statusCounts = {};
@@ -257,10 +256,41 @@ function saveCompanyChanges(companyName, newStatus) {
         console.error('Error saving changes:', error);
     });
 }
+function sortCompaniesByStatus(companies) {
+    const statusOrder = ['Zusage', 'Bewerbungsgespräch', 'Offen', 'Neutral', 'Absage'];
+    return companies.sort((a, b) => {
+        return statusOrder.indexOf(a.category) - statusOrder.indexOf(b.category);
+    });
+}
+
+function handleSearch() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const filteredCompanies = companies.filter(company => company.name.toLowerCase().includes(searchTerm));
+    displayCompanies(filteredCompanies);
+}
 
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchAndDisplayCompanies();
     document.getElementById('refreshCompanies').addEventListener('click', fetchAndDisplayCompanies);
     document.getElementById('saveChanges').addEventListener('click', saveChanges);
+    document.getElementById('searchInput').addEventListener('input', handleSearch);
+
+    // Add click event listeners to status buttons
+    document.querySelectorAll('.status-button').forEach(statusButton => {
+        statusButton.addEventListener('click', () => {
+            const status = statusButton.textContent.split(': ')[0]; // Extract status from the button text content
+            filterAndDisplayByStatus(status);
+        });
+    });
 });
+
+function filterAndDisplayByStatus(status) {
+    fetch('/api/companies')
+        .then(response => response.json())
+        .then(data => {
+            const filteredCompanies = data.filter(company => company.category === status);
+            displayCompanies(filteredCompanies);
+        })
+        .catch(error => console.error('Error fetching companies:', error));
+}

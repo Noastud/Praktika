@@ -1,6 +1,4 @@
-.company.Neutral {
-    /* No additional styling needed for Neutral */
-}
+/* No changes needed for .company.Neutral */
 
 .company.Zusage {
     background-color: #ccffcc; /* Light green for Zusage */
@@ -14,6 +12,11 @@
     background-color: #ccccff; /* Light blue for Bewerbungsgespräch */
 }
 
+.company.Absage {
+    background-color: #ffcccc; /* Light red for Absage */
+}
+
+/* Adjustments for responsiveness */
 #companiesContainer {
     display: flex;
     flex-direction: column;
@@ -35,26 +38,49 @@
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
 }
-.company.Absage {
-    background-color: #ffcccc; /* Light red for Absage */
+.company:nth-child(even) {
+    background-color: #f0f0f0; /* Light gray for even rows */
 }
-
-.company {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
 .company-content {
     display: flex;
     align-items: center;
 }
+#companiesContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-counts {
+    position: fixed;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: white; /* Add background color if needed */
+    padding: 10px;
+    border: 1px solid black; /* Add border for visibility */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.top-section {
+    position: sticky;
+    top: 0;
+    background-color: white; /* Add background color if needed */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.container {
+    /* Add margin-top to create space for the sticky top section */
+    margin-top: 100px; /* Adjust as needed */
+}
+
+
+
+
 
 .status-select {
-    margin-left: auto;
+    margin-right: 10px; /* Add margin to separate status dropdown and delete button */
 }
 
 .delete-button {
     margin-left: 10px;
 }
+

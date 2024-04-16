@@ -6,31 +6,41 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Praktika</h1>
-    <form id="addCompanyForm">
-        <input type="text" id="companyName" name="companyName" placeholder="Company Name" required>
-        <select id="companyCategory" name="companyCategory" required>
-            <option value="Neutral">Neutral</option>
-            <option value="Absage">Absage</option>
-            <option value="Bewerbungsgespräch">Bewerbungsgespräch</option>
-            <option value="Zusage">Zusage</option>
-            <option value="Offen">Offen</option>
-        </select>
-        <button type="submit">Add Company</button>
-    </form>    
-    <button id="saveChanges">Save Changes</button>
-    <button id="refreshCompanies">Refresh Companies</button>
-    <input type="text" id="searchInput" placeholder="Search...">
+    <div class="top-section">
+        <h1>Praktika</h1>
+        <form id="addCompanyForm">
+            <input type="text" id="companyName" name="companyName" placeholder="Company Name" required>
+            <select id="companyCategory" name="companyCategory" required>
+                <option value="Neutral">Neutral</option>
+                <option value="Absage">Absage</option>
+                <option value="Bewerbungsgespräch">Bewerbungsgespräch</option>
+                <option value="Zusage">Zusage</option>
+                <option value="Offen">Offen</option>
+            </select>
+            <button type="submit">Add Company</button>
+        </form>    
+        <button id="saveChanges">Save Changes</button>
+        <button id="refreshCompanies">Refresh Companies</button>
+        <input type="text" id="searchInput" placeholder="Search...">
 
-    <div id="statusCounts"></div>
-
-    <div id="companiesContainer">
-        <div class="companyHeader">
-            <div>Name</div>
-            <div>Status</div>
+        <div id="statusCounts" class="status-counts">
+            <button class="status-button">Zusage: 0</button>
+            <button class="status-button">Bewerbungsgespräch: 1</button>
+            <button class="status-button">Offen: 0</button>
+            <button class="status-button">Neutral: 4</button>
+            <button class="status-button">Absage: 22</button>
         </div>
-        <div id="companiesGrid">
-            <!-- Companies will be dynamically added here -->
+    </div>
+    
+    <div class="container">
+        <div id="companiesContainer">
+            <div class="companyHeader">
+                <div>Name</div>
+                <div>Status</div>
+            </div>
+            <div id="companiesGrid">
+                <!-- Companies will be dynamically added here -->
+            </div>
         </div>
     </div>
     <script src="addCompany.js"></script>
