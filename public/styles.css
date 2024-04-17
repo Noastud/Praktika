@@ -1,11 +1,10 @@
-/* No changes needed for .company.Neutral */
-
+/* Status colors for grid elements */
 .company.Zusage {
     background-color: #ccffcc; /* Light green for Zusage */
 }
 
 .company.Offen {
-    background-color: green;
+    background-color: rgb(97, 171, 97);
 }
 
 .company.Bewerbungsgespräch {
@@ -38,9 +37,7 @@
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
 }
-.company:nth-child(even) {
-    background-color: #f0f0f0; /* Light gray for even rows */
-}
+
 .company-content {
     display: flex;
     align-items: center;
@@ -71,16 +68,3 @@
     /* Add margin-top to create space for the sticky top section */
     margin-top: 100px; /* Adjust as needed */
 }
-
-
-
-
-
-.status-select {
-    margin-right: 10px; /* Add margin to separate status dropdown and delete button */
-}
-
-.delete-button {
-    margin-left: 10px;
-}
-

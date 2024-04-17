@@ -1,4 +1,4 @@
-document.getElementById('addCompanyForm').addEventListener('submit', function(e) {
+document.getElementById('addCompanyForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     // Get form data
@@ -15,15 +15,15 @@ document.getElementById('addCompanyForm').addEventListener('submit', function(e)
         },
         body: JSON.stringify(formData),
     })
-    .then(response => response.json())
-    .then(data => {
-        alert('Company added!');
-        console.log('Success:', data);
-        fetchAndDisplayCompanies();
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            alert('Company added!');
+            console.log('Success:', data);
+            fetchAndDisplayCompanies();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 });
 
 // Define the order of status categories
@@ -61,7 +61,7 @@ function fetchAndDisplayCompanies(searchTerm = '') {
                 // Create status select dropdown
                 const statusSelect = document.createElement('select');
                 statusSelect.classList.add('status-select');
-                statusSelect.addEventListener('change', function() {
+                statusSelect.addEventListener('change', function () {
                     // Update the status of the company
                     const newStatus = this.value;
                     company.category = newStatus;
@@ -84,11 +84,17 @@ function fetchAndDisplayCompanies(searchTerm = '') {
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
                 deleteButton.classList.add('delete-button');
-                deleteButton.addEventListener('click', function() {
-                    // Delete the company
-                    deleteCompany(company.name);
-                    const statusCounts = calculateStatusCounts(filteredCompanies);
-                    displayStatusCounts(statusCounts);
+                deleteButton.addEventListener('click', function () {
+                    const companyName = company.name;
+                    const confirmationMessage = `Are you sure you want to delete ${companyName}?`;
+
+                    if (confirm(confirmationMessage)) {
+                        deleteCompany(companyName);
+                        const statusCounts = calculateStatusCounts(filteredCompanies);
+                        displayStatusCounts(statusCounts);
+                    } else {
+                        // User clicked cancel, do nothing
+                    }
                 });
 
                 // Append elements to company content div
@@ -115,12 +121,14 @@ function calculateStatusCounts(companies) {
 }
 
 // Function to display status counts
+//buttons should be a filter for the different categorys
 function displayStatusCounts(statusCounts) {
     const countsContainer = document.getElementById('statusCounts');
     countsContainer.innerHTML = ''; // Clear previous counts
 
     // Create buttons for each status count
     Object.entries(statusCounts).forEach(([status, count]) => {
+        const countDiv = document.createElement('div'); // Create a div to contain each button
         const countButton = document.createElement('button');
         countButton.textContent = status;
         countButton.classList.add('status-button');
@@ -132,9 +140,11 @@ function displayStatusCounts(statusCounts) {
         countSpan.textContent = count;
         countButton.appendChild(countSpan);
 
-        countsContainer.appendChild(countButton);
+        countDiv.appendChild(countButton); // Append button to div
+        countsContainer.appendChild(countDiv); // Append div to container
     });
 }
+
 
 // Function to delete a company
 function deleteCompany(companyName) {
@@ -142,18 +152,19 @@ function deleteCompany(companyName) {
     fetch(`/api/companies/${companyName}`, {
         method: 'DELETE',
     })
-    .then(response => {
-        if (response.ok) {
-            console.log('Company deleted successfully');
-            fetchAndDisplayCompanies(); // Refresh the companies list after deletion
-        } else {
-            console.error('Failed to delete company');
-        }
-    })
-    .catch(error => {
-        console.error('Error deleting company:', error);
-    });
+        .then(response => {
+            if (response.ok) {
+                console.log('Company deleted successfully');
+                fetchAndDisplayCompanies(); // Refresh the companies list after deletion
+            } else {
+                console.error('Failed to delete company');
+            }
+        })
+        .catch(error => {
+            console.error('Error deleting company:', error);
+        });
 }
+
 
 // Function to save changes to company status
 function saveChanges() {
@@ -177,16 +188,16 @@ function saveCompanyChanges(companyName, newStatus) {
         },
         body: JSON.stringify({ newCategory: newStatus }),
     })
-    .then(response => {
-        if (response.ok) {
-            console.log('Changes saved successfully');
-        } else {
-            console.error('Failed to save changes');
-        }
-    })
-    .catch(error => {
-        console.error('Error saving changes:', error);
-    });
+        .then(response => {
+            if (response.ok) {
+                console.log('Changes saved successfully');
+            } else {
+                console.error('Failed to save changes');
+            }
+        })
+        .catch(error => {
+            console.error('Error saving changes:', error);
+        });
 }
 
 // Function to filter and display companies by status
