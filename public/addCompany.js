@@ -1,11 +1,13 @@
 document.getElementById('addCompanyForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // Get form data
     const formData = {
         companyName: document.getElementById('companyName').value,
         companyCategory: document.getElementById('companyCategory').value,
     };
 
+    // Send POST request to add a new company
     fetch('/api/companies', {
         method: 'POST',
         headers: {
@@ -24,23 +26,28 @@ document.getElementById('addCompanyForm').addEventListener('submit', function(e)
     });
 });
 
+// Define the order of status categories
 const statusOrder = ['Zusage', 'Bewerbungsgespräch', 'Offen', 'Neutral', 'Absage'];
 
-function fetchAndDisplayCompanies() {
+// Function to fetch and display companies
+function fetchAndDisplayCompanies(searchTerm = '') {
     console.log("Fetching and displaying companies...");
     fetch('/api/companies')
         .then(response => response.json())
         .then(data => {
-            const searchInput = document.getElementById('searchInput').value.toLowerCase();
-            const filteredCompanies = data.filter(company => company.name.toLowerCase().includes(searchInput));
+            // Filter companies based on the search term
+            const filteredCompanies = data.filter(company => company.name.toLowerCase().includes(searchTerm.toLowerCase()));
             filteredCompanies.sort((a, b) => statusOrder.indexOf(a.category) - statusOrder.indexOf(b.category));
 
+            // Get the grid container
             const grid = document.getElementById('companiesGrid');
             grid.innerHTML = '';
 
+            // Calculate and display status counts
             const statusCounts = calculateStatusCounts(filteredCompanies);
             displayStatusCounts(statusCounts);
 
+            // Display each company in the grid
             filteredCompanies.forEach(company => {
                 const companyDiv = document.createElement('div');
                 companyDiv.className = `company ${company.category}`;
@@ -51,15 +58,18 @@ function fetchAndDisplayCompanies() {
                 const companyContentDiv = document.createElement('div');
                 companyContentDiv.classList.add('company-content');
 
+                // Create status select dropdown
                 const statusSelect = document.createElement('select');
                 statusSelect.classList.add('status-select');
                 statusSelect.addEventListener('change', function() {
+                    // Update the status of the company
                     const newStatus = this.value;
                     company.category = newStatus;
                     const statusCounts = calculateStatusCounts(filteredCompanies);
                     displayStatusCounts(statusCounts);
                 });
 
+                // Populate status options
                 statusOrder.forEach(status => {
                     const option = document.createElement('option');
                     option.value = status;
@@ -67,28 +77,35 @@ function fetchAndDisplayCompanies() {
                     statusSelect.appendChild(option);
                 });
 
+                // Set the selected option to the current company status
                 statusSelect.value = company.category;
 
+                // Create delete button
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
                 deleteButton.classList.add('delete-button');
                 deleteButton.addEventListener('click', function() {
+                    // Delete the company
                     deleteCompany(company.name);
                     const statusCounts = calculateStatusCounts(filteredCompanies);
                     displayStatusCounts(statusCounts);
                 });
 
+                // Append elements to company content div
                 companyContentDiv.appendChild(statusSelect);
                 companyContentDiv.appendChild(deleteButton);
 
+                // Append elements to company div
                 companyDiv.appendChild(nameDiv);
                 companyDiv.appendChild(companyContentDiv);
 
+                // Append company div to grid
                 grid.appendChild(companyDiv);
             });
         }).catch(error => console.error('Error fetching companies:', error));
 }
 
+// Function to calculate status counts
 function calculateStatusCounts(companies) {
     const statusCounts = {};
     statusOrder.forEach(status => {
@@ -97,10 +114,12 @@ function calculateStatusCounts(companies) {
     return statusCounts;
 }
 
+// Function to display status counts
 function displayStatusCounts(statusCounts) {
     const countsContainer = document.getElementById('statusCounts');
-    countsContainer.innerHTML = '';
+    countsContainer.innerHTML = ''; // Clear previous counts
 
+    // Create buttons for each status count
     Object.entries(statusCounts).forEach(([status, count]) => {
         const countButton = document.createElement('button');
         countButton.textContent = status;
@@ -117,14 +136,16 @@ function displayStatusCounts(statusCounts) {
     });
 }
 
+// Function to delete a company
 function deleteCompany(companyName) {
+    // Send DELETE request to delete the company
     fetch(`/api/companies/${companyName}`, {
         method: 'DELETE',
     })
     .then(response => {
         if (response.ok) {
             console.log('Company deleted successfully');
-            fetchAndDisplayCompanies();
+            fetchAndDisplayCompanies(); // Refresh the companies list after deletion
         } else {
             console.error('Failed to delete company');
         }
@@ -134,16 +155,21 @@ function deleteCompany(companyName) {
     });
 }
 
+// Function to save changes to company status
 function saveChanges() {
     const companyRows = document.querySelectorAll('.company');
     companyRows.forEach(row => {
         const companyName = row.querySelector('div').textContent;
         const newStatus = row.querySelector('.status-select').value;
+
+        // Call a function to save the changes for this company
         saveCompanyChanges(companyName, newStatus);
     });
 }
 
+// Function to save changes for a specific company
 function saveCompanyChanges(companyName, newStatus) {
+    // Send PUT request to update the company status
     fetch(`/api/companies/${companyName}/category`, {
         method: 'PUT',
         headers: {
@@ -163,31 +189,32 @@ function saveCompanyChanges(companyName, newStatus) {
     });
 }
 
+// Function to filter and display companies by status
 function filterAndDisplayByStatus(status) {
     fetch('/api/companies')
         .then(response => response.json())
         .then(data => {
+            // Filter companies based on the selected status
             const filteredCompanies = data.filter(company => company.category === status);
+
+            // Display filtered companies
             displayCompanies(filteredCompanies);
         })
         .catch(error => console.error('Error fetching companies:', error));
 }
 
-function handleSearch() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const filteredCompanies = companies.filter(company => company.name.toLowerCase().includes(searchTerm));
-    displayCompanies(filteredCompanies);
-}
 
+
+// Event listener for page load
 document.addEventListener('DOMContentLoaded', () => {
-    fetchAndDisplayCompanies();
+    fetchAndDisplayCompanies(); // Fetch and display all companies on page load
     document.getElementById('refreshCompanies').addEventListener('click', fetchAndDisplayCompanies);
     document.getElementById('saveChanges').addEventListener('click', saveChanges);
-    document.getElementById('searchInput').addEventListener('input', handleSearch);
 
+    // Event listeners for status count buttons
     document.querySelectorAll('.status-counts .status-button').forEach(statusButton => {
         statusButton.addEventListener('click', () => {
-            const status = statusButton.textContent.split(': ')[0];
+            const status = statusButton.textContent.split(': ')[0]; // Extract status from the button text content
             filterAndDisplayByStatus(status);
         });
     });
