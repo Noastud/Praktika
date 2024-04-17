@@ -5,7 +5,7 @@
 }
 
 .company.Offen {
-    background-color: #ffffcc; /* Light yellow for Offen */
+    background-color: green;
 }
 
 .company.Bewerbungsgespräch {
@@ -51,11 +51,11 @@
 }
 
 .status-counts {
-    position: fixed;
-    top: 10px; /* Adjust as needed */
+    top: 1px;
+    position: fixed; /* Adjust as needed */
     right: 10px; /* Adjust as needed */
     background-color: white; /* Add background color if needed */
-    padding: 10px;
+    padding: 5px;
     border: 1px solid black; /* Add border for visibility */
     z-index: 1000; /* Ensure it's above other content */
 }
