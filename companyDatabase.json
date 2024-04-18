@@ -1,1 +1,662 @@
-[{"name":"IWB","category":"Absage"},{"name":"youengingeering","category":"Absage"},{"name":"Aebo AG","category":"Neutral"},{"name":"Dexion AG","category":"Absage"},{"name":"Controltechengineering","category":"Absage"},{"name":"Schweizerische Bankier vereinigung","category":"Absage"},{"name":"Justiz- und Sicherheitsdepartement","category":"Neutral"},{"name":"Magnolia International Ltd.","category":"Neutral"},{"name":"ImproWare AG","category":"Neutral"},{"name":"phibus","category":"Neutral"},{"name":"microtom ag","category":"Absage"},{"name":"ebcom AG","category":"Neutral"},{"name":"Basel Institute on Governance","category":"Absage"},{"name":"A. Aegerter & Dr. O. Bosshardt AG","category":"Absage"},{"name":"Advanced Osteotomy Tools - AOT AG","category":"Absage"},{"name":"Agilita AG","category":"Absage"},{"name":"Apiax AG","category":"Neutral"},{"name":"Atos AG","category":"Neutral"},{"name":"Avacone AG","category":"Neutral"},{"name":"Baloise Versicherung","category":"Absage"},{"name":"BlueMouse GmbH","category":"Neutral"},{"name":"cyon GmbH","category":"Absage"},{"name":"dplan AG","category":"Neutral"},{"name":"Dreamlab Technologies AG","category":"Neutral"},{"name":"Iterata AG","category":"Neutral"},{"name":"Klixa","category":"Neutral"},{"name":"Legon Informatik AG","category":"Neutral"},{"name":"Lufthansa Systems FlightNav AG","category":"Bewerbungsgespräch"},{"name":"Suxesiv AG","category":"Neutral"},{"name":"SWISSFM AG","category":"Neutral"},{"name":"teva","category":"Absage"},{"name":"Tweaklab AG","category":"Neutral"},{"name":"Unblu Inc.","category":"Absage"},{"name":"nag.ch","category":"Neutral"},{"name":"Coop","category":"Absage"},{"name":"BLBK","category":"Neutral"},{"name":"Kantons Spital BL","category":"Neutral"},{"name":"Adfinis AG","category":"Neutral"},{"name":"Adobe Research (Schweiz) AG","category":"Neutral"},{"name":"AAmann Informatik AG","category":"Neutral"},{"name":"Adullam-Stiftung","category":"Neutral"},{"name":"Armacom AG","category":"Neutral"},{"name":"Ascendis ICT Services","category":"Neutral"},{"name":"Atlantis Informatik AG","category":"Neutral"},{"name":"atside AG","category":"Neutral"},{"name":"Avacone AG","category":"Neutral"},{"name":"Bachem AG","category":"Absage"},{"name":"BakerHicks AG","category":"Neutral"},{"name":"Baltek Informatikberatungen GmbH","category":"Neutral"},{"name":"Bank CIC (Schweiz) AG","category":"Neutral"},{"name":"Bardusch AG","category":"Neutral"},{"name":"baselnetgroup ag","category":"Neutral"},{"name":"bc medien ag","category":"Neutral"},{"name":"Bechtle Steffen Schweiz AG","category":"Neutral"},{"name":"Bell Schweiz AG","category":"Neutral"},{"name":"BGB Analytik AG","category":"Neutral"},{"name":"Birkhäuser+GBC AG","category":"Neutral"},{"name":"Byron Informatik AG","category":"Neutral"},{"name":"CBT Software AG","category":"Neutral"},{"name":"Chemspeed Technologies AG","category":"Neutral"},{"name":"Computer Trend IT-Solution GmbH","category":"Neutral"},{"name":"ComputerWorks","category":"Absage"},{"name":"ControlTech Engineering","category":"Absage"},{"name":"Coop Genossenschaft","category":"Neutral"},{"name":"cross serve gmbh","category":"Neutral"},{"name":"CTC Analytics AG","category":"Neutral"},{"name":"Cyon GmbH","category":"Absage"},{"name":"Daco Systems AG","category":"Neutral"},{"name":"Datarun GmbH","category":"Neutral"},{"name":"DQ Solutions – DataQuest AG","category":"Neutral"},{"name":"Delica AG","category":"Neutral"},{"name":"DropNet AG","category":"Neutral"},{"name":"E4 AG","category":"Neutral"},{"name":"EDVPOINT AG","category":"Neutral"},{"name":"Eingliederungsstätte Baselland ESB","category":"Neutral"},{"name":"Elektra Baselland (EBL)","category":"Neutral"},{"name":"Endress + Hauser Flowtec AG","category":"Neutral"},{"name":"EOTEC AG","category":"Neutral"},{"name":"F. Hoffmann-La Roche AG","category":"Neutral"},{"name":"Finanz- und Kirchendirektion BL","category":"Neutral"},{"name":"Gemeindeverwaltung Aesch","category":"Neutral"},{"name":"Gemeindeverwaltung Allschwil","category":"Neutral"},{"name":"Gemeindeverwaltung Riehen","category":"Neutral"},{"name":"GeneData AG","category":"Neutral"},{"name":"Genossenschaft Migros Basel","category":"Neutral"},{"name":"Global System AG","category":"Neutral"},{"name":"Gribi Management AG","category":"Neutral"},{"name":"Habasit AG","category":"Neutral"},{"name":"Helvetia Versicherungen","category":"Neutral"},{"name":"Holinger AG","category":"Neutral"},{"name":"iart ag","category":"Neutral"},{"name":"ICSystems + Support AG","category":"Neutral"},{"name":"Institut Straumann AG","category":"Neutral"},{"name":"Integra Metering AG","category":"Neutral"},{"name":"InterBit AG","category":"Neutral"},{"name":"Intesys GmbH","category":"Neutral"},{"name":"ipso Bildung AG","category":"Neutral"},{"name":"itec services","category":"Neutral"},{"name":"Itris Maintenance AG","category":"Neutral"},{"name":"Itris One AG","category":"Neutral"},{"name":"JCS Software AG","category":"Neutral"},{"name":"Jet Aviation Management AG","category":"Neutral"},{"name":"Justiz- und Sicherheitsdepartement BS","category":"Neutral"},{"name":"Kallysoft Informatik AG","category":"Neutral"},{"name":"Kantonsspital Baselland","category":"Neutral"},{"name":"Klinik Arlesheim AG","category":"Neutral"},{"name":"Klixa IT GmbH","category":"Neutral"},{"name":"Klixa Bildungszentrum","category":"Neutral"},{"name":"kmubtn","category":"Neutral"},{"name":"Leftclick AG","category":"Neutral"},{"name":"Levantis AG","category":"Neutral"},{"name":"Manor AG, Basel","category":"Neutral"},{"name":"MCH Messe Schweiz (Basel) AG","category":"Absage"},{"name":"meteoblue ag","category":"Neutral"},{"name":"Mibelle AG","category":"Neutral"},{"name":"Müller AG Verpackungen","category":"Neutral"},{"name":"OF-Software AG","category":"Neutral"},{"name":"Orca Services AG","category":"Neutral"},{"name":"oriented.net gmbh","category":"Neutral"},{"name":"Overall Genossenschaft","category":"Neutral"},{"name":"Pax Versicherungen","category":"Neutral"},{"name":"PCI Computer Systems","category":"Neutral"},{"name":"Pentapharm AG","category":"Neutral"},{"name":"Phibus Informatik GmbH","category":"Neutral"},{"name":"Primeo Management AG","category":"Neutral"},{"name":"Primetrack AG","category":"Neutral"},{"name":"Projekt Venice GmbH","category":"Neutral"},{"name":"PV Computing AG","category":"Neutral"},{"name":"Rapp Services AG","category":"Neutral"},{"name":"Regent Beleuchtungskörper AG","category":"Neutral"},{"name":"Rego-Fix","category":"Neutral"},{"name":"Relux Informatik AG","category":"Neutral"},{"name":"Revendo AG","category":"Neutral"},{"name":"Ricola AG","category":"Neutral"},{"name":"Rohrbogen AG","category":"Neutral"},{"name":"Rosenthaler + Partner AG","category":"Neutral"},{"name":"S. Karger AG","category":"Neutral"},{"name":"Schneider Computer Services","category":"Neutral"},{"name":"Semafor Informatik & Energie AG","category":"Neutral"},{"name":"SISA Studio Informatica SA","category":"Neutral"},{"name":"SKAN AG","category":"Neutral"},{"name":"Sowacom GmbH","category":"Neutral"},{"name":"St. Claraspital AG","category":"Neutral"},{"name":"Stäubli Electrical Connectors AG","category":"Neutral"},{"name":"Stiftung Jugendsozialwerk Blaues Kreuz BL","category":"Neutral"},{"name":"Supsign GmbH","category":"Neutral"},{"name":"Suxesiv AG","category":"Neutral"},{"name":"Swiss Aviation Software AG, Basel","category":"Neutral"},{"name":"Swisscom AG","category":"Neutral"},{"name":"Swisslos","category":"Neutral"},{"name":"Triangle Micro Research AG","category":"Neutral"},{"name":"Universitätsspital Basel","category":"Neutral"},{"name":"Viollier AG","category":"Neutral"},{"name":"Von Roll Schweiz AG","category":"Neutral"},{"name":"VTX Datacomm AG, Basel","category":"Neutral"},{"name":"WebAufbau","category":"Neutral"},{"name":"Weita AG","category":"Neutral"},{"name":"Wenpas Informatik","category":"Neutral"},{"name":"WIR Bank Genossenschaft","category":"Neutral"},{"name":"Yoo AG","category":"Neutral"},{"name":"zvoove Switzerland AG","category":"Neutral"},{"name":"SBB AG","category":"Absage"},{"name":"IWB AG","category":"Absage"},{"name":"CBT AG","category":"Absage"}]
+[
+    {
+        "name": "IWB",
+        "category": "Absage"
+    },
+    {
+        "name": "youengingeering",
+        "category": "Absage"
+    },
+    {
+        "name": "Aebo AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Dexion AG",
+        "category": "Absage"
+    },
+    {
+        "name": "Controltechengineering",
+        "category": "Absage"
+    },
+    {
+        "name": "Schweizerische Bankier vereinigung",
+        "category": "Absage"
+    },
+    {
+        "name": "Justiz- und Sicherheitsdepartement",
+        "category": "Neutral"
+    },
+    {
+        "name": "Magnolia International Ltd.",
+        "category": "Neutral"
+    },
+    {
+        "name": "ImproWare AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "phibus",
+        "category": "Neutral"
+    },
+    {
+        "name": "microtom ag",
+        "category": "Absage"
+    },
+    {
+        "name": "ebcom AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Basel Institute on Governance",
+        "category": "Absage"
+    },
+    {
+        "name": "A. Aegerter & Dr. O. Bosshardt AG",
+        "category": "Absage"
+    },
+    {
+        "name": "Advanced Osteotomy Tools - AOT AG",
+        "category": "Absage"
+    },
+    {
+        "name": "Agilita AG",
+        "category": "Absage"
+    },
+    {
+        "name": "Apiax AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Atos AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Avacone AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Baloise Versicherung",
+        "category": "Absage"
+    },
+    {
+        "name": "BlueMouse GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "cyon GmbH",
+        "category": "Absage"
+    },
+    {
+        "name": "dplan AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Dreamlab Technologies AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Iterata AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Klixa",
+        "category": "Neutral"
+    },
+    {
+        "name": "Legon Informatik AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Lufthansa Systems FlightNav AG",
+        "category": "Bewerbungsgespräch"
+    },
+    {
+        "name": "Suxesiv AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "SWISSFM AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "teva",
+        "category": "Absage"
+    },
+    {
+        "name": "Tweaklab AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Unblu Inc.",
+        "category": "Absage"
+    },
+    {
+        "name": "nag.ch",
+        "category": "Neutral"
+    },
+    {
+        "name": "Coop",
+        "category": "Absage"
+    },
+    {
+        "name": "BLBK",
+        "category": "Neutral"
+    },
+    {
+        "name": "Kantons Spital BL",
+        "category": "Neutral"
+    },
+    {
+        "name": "Adfinis AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Adobe Research (Schweiz) AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "AAmann Informatik AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Adullam-Stiftung",
+        "category": "Neutral"
+    },
+    {
+        "name": "Armacom AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Ascendis ICT Services",
+        "category": "Neutral"
+    },
+    {
+        "name": "Atlantis Informatik AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "atside AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Avacone AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Bachem AG",
+        "category": "Absage"
+    },
+    {
+        "name": "BakerHicks AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Baltek Informatikberatungen GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "Bank CIC (Schweiz) AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Bardusch AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "baselnetgroup ag",
+        "category": "Neutral"
+    },
+    {
+        "name": "bc medien ag",
+        "category": "Neutral"
+    },
+    {
+        "name": "Bechtle Steffen Schweiz AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Bell Schweiz AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "BGB Analytik AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Birkhäuser+GBC AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Byron Informatik AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "CBT Software AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Chemspeed Technologies AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Computer Trend IT-Solution GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "ComputerWorks",
+        "category": "Absage"
+    },
+    {
+        "name": "ControlTech Engineering",
+        "category": "Absage"
+    },
+    {
+        "name": "Coop Genossenschaft",
+        "category": "Neutral"
+    },
+    {
+        "name": "cross serve gmbh",
+        "category": "Neutral"
+    },
+    {
+        "name": "CTC Analytics AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Cyon GmbH",
+        "category": "Absage"
+    },
+    {
+        "name": "Daco Systems AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Datarun GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "DQ Solutions – DataQuest AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Delica AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "DropNet AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "E4 AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "EDVPOINT AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Eingliederungsstätte Baselland ESB",
+        "category": "Neutral"
+    },
+    {
+        "name": "Elektra Baselland (EBL)",
+        "category": "Neutral"
+    },
+    {
+        "name": "Endress + Hauser Flowtec AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "EOTEC AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "F. Hoffmann-La Roche AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Finanz- und Kirchendirektion BL",
+        "category": "Neutral"
+    },
+    {
+        "name": "Gemeindeverwaltung Aesch",
+        "category": "Neutral"
+    },
+    {
+        "name": "Gemeindeverwaltung Allschwil",
+        "category": "Neutral"
+    },
+    {
+        "name": "Gemeindeverwaltung Riehen",
+        "category": "Neutral"
+    },
+    {
+        "name": "GeneData AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Genossenschaft Migros Basel",
+        "category": "Neutral"
+    },
+    {
+        "name": "Global System AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Gribi Management AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Habasit AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Helvetia Versicherungen",
+        "category": "Neutral"
+    },
+    {
+        "name": "Holinger AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "iart ag",
+        "category": "Neutral"
+    },
+    {
+        "name": "ICSystems + Support AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Institut Straumann AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Integra Metering AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "InterBit AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Intesys GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "ipso Bildung AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "itec services",
+        "category": "Neutral"
+    },
+    {
+        "name": "Itris Maintenance AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Itris One AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "JCS Software AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Jet Aviation Management AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Justiz- und Sicherheitsdepartement BS",
+        "category": "Neutral"
+    },
+    {
+        "name": "Kallysoft Informatik AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Kantonsspital Baselland",
+        "category": "Neutral"
+    },
+    {
+        "name": "Klinik Arlesheim AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Klixa IT GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "Klixa Bildungszentrum",
+        "category": "Neutral"
+    },
+    {
+        "name": "kmubtn",
+        "category": "Neutral"
+    },
+    {
+        "name": "Leftclick AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Levantis AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Manor AG, Basel",
+        "category": "Neutral"
+    },
+    {
+        "name": "MCH Messe Schweiz (Basel) AG",
+        "category": "Absage"
+    },
+    {
+        "name": "meteoblue ag",
+        "category": "Neutral"
+    },
+    {
+        "name": "Mibelle AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Müller AG Verpackungen",
+        "category": "Neutral"
+    },
+    {
+        "name": "OF-Software AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Orca Services AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "oriented.net gmbh",
+        "category": "Neutral"
+    },
+    {
+        "name": "Overall Genossenschaft",
+        "category": "Neutral"
+    },
+    {
+        "name": "Pax Versicherungen",
+        "category": "Neutral"
+    },
+    {
+        "name": "PCI Computer Systems",
+        "category": "Neutral"
+    },
+    {
+        "name": "Pentapharm AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Phibus Informatik GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "Primeo Management AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Primetrack AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Projekt Venice GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "PV Computing AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Rapp Services AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Regent Beleuchtungskörper AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Rego-Fix",
+        "category": "Neutral"
+    },
+    {
+        "name": "Relux Informatik AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Revendo AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Ricola AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Rohrbogen AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Rosenthaler + Partner AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "S. Karger AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Schneider Computer Services",
+        "category": "Neutral"
+    },
+    {
+        "name": "Semafor Informatik & Energie AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "SISA Studio Informatica SA",
+        "category": "Neutral"
+    },
+    {
+        "name": "SKAN AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Sowacom GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "St. Claraspital AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Stäubli Electrical Connectors AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Stiftung Jugendsozialwerk Blaues Kreuz BL",
+        "category": "Neutral"
+    },
+    {
+        "name": "Supsign GmbH",
+        "category": "Neutral"
+    },
+    {
+        "name": "Suxesiv AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Swiss Aviation Software AG, Basel",
+        "category": "Neutral"
+    },
+    {
+        "name": "Swisscom AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Swisslos",
+        "category": "Neutral"
+    },
+    {
+        "name": "Triangle Micro Research AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Universitätsspital Basel",
+        "category": "Neutral"
+    },
+    {
+        "name": "Viollier AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Von Roll Schweiz AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "VTX Datacomm AG, Basel",
+        "category": "Neutral"
+    },
+    {
+        "name": "WebAufbau",
+        "category": "Neutral"
+    },
+    {
+        "name": "Weita AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "Wenpas Informatik",
+        "category": "Neutral"
+    },
+    {
+        "name": "WIR Bank Genossenschaft",
+        "category": "Neutral"
+    },
+    {
+        "name": "Yoo AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "zvoove Switzerland AG",
+        "category": "Neutral"
+    },
+    {
+        "name": "SBB AG",
+        "category": "Absage"
+    },
+    {
+        "name": "IWB AG",
+        "category": "Absage"
+    },
+    {
+        "name": "CBT AG",
+        "category": "Absage"
+    },
+    {
+        "name": "Google",
+        "category": "Zusage"
+    }
+]

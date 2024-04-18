@@ -1,0 +1,38 @@
+import time
+from random import randint
+from googlesearch import search
+from bs4 import BeautifulSoup
+import json
+
+def find_company_website(company_name):
+    try:
+        search_results = search(company_name + " website", num=1, stop=1)
+        for url in search_results:
+            return url
+    except Exception as e:
+        print(f"Error finding website for {company_name}: {e}")
+        # Introduce a delay before retrying
+        time.sleep(randint(5, 10))
+        # Retry the request
+        return find_company_website(company_name)
+
+def update_companies_with_websites(companies):
+    for company in companies:
+        website = find_company_website(company["name"])
+        if website:
+            company["website"] = website
+
+def main():
+    # Load companies from JSON file
+    with open("companyDatabase.json", "r") as file:
+        companies = json.load(file)
+
+    # Update companies with websites
+    update_companies_with_websites(companies)
+
+    # Save updated data to JSON file
+    with open("companies_with_websites.json", "w") as file:
+        json.dump(companies, file, indent=4)
+
+if __name__ == "__main__":
+    main()
