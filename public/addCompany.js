@@ -201,18 +201,6 @@ function saveCompanyChanges(companyName, newStatus) {
 }
 
 // Function to filter and display companies by status
-function filterAndDisplayByStatus(status) {
-    fetch('/api/companies')
-        .then(response => response.json())
-        .then(data => {
-            // Filter companies based on the selected status
-            const filteredCompanies = data.filter(company => company.category === status);
-
-            // Display filtered companies
-            displayCompanies(filteredCompanies);
-        })
-        .catch(error => console.error('Error fetching companies:', error));
-}
 
 
 
