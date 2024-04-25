@@ -10,6 +10,7 @@
         <h1>Praktika</h1>
         <form id="addCompanyForm">
             <input type="text" id="companyName" name="companyName" placeholder="Company Name" required>
+            <input type="url" id="companyWebsite" name="companyWebsite" placeholder="Company Website" required>
             <select id="companyCategory" name="companyCategory" required>
                 <option value="Neutral">Neutral</option>
                 <option value="Absage">Absage</option>
@@ -18,14 +19,15 @@
                 <option value="Offen">Offen</option>
             </select>
             <button type="submit">Add Company</button>
-        </form>    
+        </form>
         <button id="saveChanges">Save Changes</button>
         <button id="refreshCompanies">Refresh Companies</button>
-
+    
         <div id="statusCounts" class="status-counts">
             <!-- Status buttons with counts will be dynamically added here -->
         </div>
     </div>
+    
     
     <div class="container">
         <div id="companiesContainer">

@@ -47,6 +47,17 @@ app.put('/api/companies/:companyName/status', (req, res) => {
     updateCompanyStatus(companyName, newStatus);
     res.status(200).send({ message: 'Company status updated successfully' });
 });
+app.put('/api/companies/:companyName/favorite', (req, res) => {
+    const { companyName } = req.params;
+    const { favorite } = req.body;
+    const result = toggleCompanyFavorite(companyName, favorite); // Implement this function in CompanyController
+    if (result.success) {
+        res.status(200).send({ message: 'Company favorite status toggled successfully' });
+    } else {
+        res.status(404).send({ message: 'Company not found' });
+    }
+});
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

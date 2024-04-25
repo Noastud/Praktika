@@ -20,19 +20,36 @@ const saveCompanies = (companies) => {
     fs.writeFileSync(databasePath, dataJSON);
 };
 
-// Add a new company
-const addCompany = (companyName, companyCategory) => {
+// Add a new company with optional website URL and favorite status
+const addCompany = (companyName, companyCategory, websiteURL = '', isFavorite = false) => {
     const companies = loadCompanies();
     const duplicateCompany = companies.find((company) => company.name === companyName);
 
     if (!duplicateCompany) {
-        companies.push({ name: companyName, category: companyCategory });
+        companies.push({ name: companyName, category: companyCategory, favorite: isFavorite, website: websiteURL });
         saveCompanies(companies);
         console.log('New company added.');
     } else {
         console.log('Company already exists.');
     }
 };
+
+// Toggle company's favorite status
+const toggleCompanyFavorite = (companyName, favorite) => {
+    const companies = loadCompanies();
+    const company = companies.find((company) => company.name === companyName);
+
+    if (company) {
+        company.favorite = !company.favorite; // Toggle favorite status
+        saveCompanies(companies);
+        console.log('Company favorite status updated.');
+        return { success: true };
+    } else {
+        console.log('Company not found.');
+        return { success: false };
+    }
+};
+
 
 // Update a company's category
 const updateCompanyCategory = (companyName, newCategory) => {
@@ -42,7 +59,7 @@ const updateCompanyCategory = (companyName, newCategory) => {
     if (company) {
         company.category = newCategory;
         saveCompanies(companies);
-        console.log('Company category updated.');
+       // console.log('Company category updated.');
     } else {
         console.log('Company not found.');
     }
@@ -59,6 +76,19 @@ const deleteCompany = (companyName) => {
         return { success: false };
     }
 };  
+const addOrUpdateCompanyWebsite = (companyName, websiteURL) => {
+    const companies = loadCompanies();
+    const companyIndex = companies.findIndex((company) => company.name === companyName);
+
+    if (companyIndex !== -1) {
+        companies[companyIndex].website = websiteURL;
+        saveCompanies(companies);
+        console.log('Company website updated.');
+    } else {
+        console.log('Company not found.');
+    }
+};
+
 
 // Update a company's status
 const updateCompanyStatus = (companyName, newStatus) => {
@@ -73,6 +103,7 @@ const updateCompanyStatus = (companyName, newStatus) => {
         console.log('Company not found.');
     }
 };
+
 const sortCompanies = (companies, sortBy) => {
     if (sortBy === 'status') {
         return companies.sort((a, b) => statusOrder.indexOf(a.category) - statusOrder.indexOf(b.category));
@@ -84,10 +115,9 @@ const sortCompanies = (companies, sortBy) => {
     }
 };
 
-
 const getCompanies = () => {
     return loadCompanies(); // Using the loadCompanies function you already have
 };
 
 // Export all functions at the end of the file
-module.exports = { addCompany, updateCompanyCategory, getCompanies, deleteCompany };
+module.exports = { addCompany, updateCompanyCategory, toggleCompanyFavorite, getCompanies, deleteCompany };

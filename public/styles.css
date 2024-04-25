@@ -15,6 +15,10 @@
     background-color: #ffcccc; /* Light red for Absage */
 }
 
+.company.favorite {
+    background-color: #ffffcc; /* Light yellow for favorite */
+}
+
 /* Adjustments for responsiveness */
 #companiesContainer {
     display: flex;
