@@ -68,6 +68,12 @@ function fetchAndDisplayCompanies(searchTerm = '') {
                 const nameDiv = document.createElement('div');
                 nameDiv.textContent = company.name;
 
+
+                const nameLink = document.createElement('a'); // Create a hyperlink element
+                nameLink.textContent = company.name;
+                nameLink.href = company.website; // Set the href attribute to the website URL
+                nameLink.target = '_blank'; // Open the link in a new tab
+
                 const companyContentDiv = document.createElement('div');
                 companyContentDiv.classList.add('company-content');
 
@@ -158,7 +164,7 @@ function fetchAndDisplayCompanies(searchTerm = '') {
                 companyContentDiv.appendChild(favoriteButton);
 
                 // Append elements to company div
-                companyDiv.appendChild(nameDiv);
+                companyDiv.appendChild(nameLink); // Append the hyperlink instead of the nameDiv
                 companyDiv.appendChild(companyContentDiv);
 
                 // Append company div to grid
